@@ -63,7 +63,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "password should be present (nonblank)" do
     @user.password = @user.password_confirmation = " " * 8
-    assert @user.valid?
+    assert_not @user.valid?
   end
 
   test "password should have a minimum length" do
